@@ -27,17 +27,16 @@ exports.signupService = async (data) => {
         avatar: avatar || "",
         otp,
         otpExpire,
-        isVerified: true,
+        isVerified: false,
       });
     } else {
       user.otp = otp;
       user.otpExpire = otpExpire;
-      user.isVerified = true;
     }
 
     await user.save();
 
-    //await sendOTP(email, otp);
+    await sendOTP(email, otp);
 
     return user;
   } catch (error) {
