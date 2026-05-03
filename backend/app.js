@@ -22,10 +22,10 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
-app.use("/api/user", userRouter);
+app.use("/user", userRouter);
 
-app.use("/api/upload", uploadRouter);
-app.use("/api/post", postRouter);
+app.use("/upload", uploadRouter);
+app.use("/post", postRouter);
 
 
 
